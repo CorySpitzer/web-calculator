@@ -2,6 +2,16 @@ html, body, .container {
     height: 100%;
 }
 
+body {
+    /* Bckground image from 
+    https://www.freepik.com/free-vector/gradient-numerology-background_37573680.htm#fromView=keyword&page=2&position=7&uuid=7fa813cc-fa0a-4d2e-be6c-92b0954ddcb1&new_detail=true
+    */
+    background-image:url('background.jpg');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .container {
     display: flex;
     align-items: center;
