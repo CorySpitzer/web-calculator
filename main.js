@@ -1,5 +1,4 @@
 function operate(operator, operand1, operand2) {
-    // let result = 0;
     if (operator == '+') {
         return operand1 + operand2;
     } else if (operator == '-') {
@@ -14,13 +13,23 @@ function operate(operator, operand1, operand2) {
     } else {
         return "Error: Invalid operator";
     }
-    // document.getElementById('result').textContent = result
 }
 
 function calculate() {
-    let operator = '+';
+    // let operator = document.querySelector('input[name="operation"]:checked').value;
+    let operator = 'no operator';
+    if (document.getElementById('plus').checked) {
+        operator = '+';
+    } else if (document.getElementById('minus').checked) {
+        operator = '-';
+    } else if (document.getElementById('multiply').checked) {
+        operator = '*';
+    } else if (document.getElementById('divide').checked) {
+        operator = '/';
+    }   
+    console.log('operator is ' + operator);
     let operand1 = document.getElementById('firstOperand').value;
-    console.log('1st op is ' + operand1);
+    // console.log('1st op is ' + operand1);
     let operand2 = document.getElementById('secondOperand').value;
     let result  = operate(operator, Number(operand1), Number(operand2));
     document.getElementById('result').textContent = result;
