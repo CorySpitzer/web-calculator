@@ -1,24 +1,28 @@
 function operate(operator, operand1, operand2) {
-    let result = 0;
+    // let result = 0;
     if (operator == '+') {
-        result = operand1 + operand2;
+        return operand1 + operand2;
     } else if (operator == '-') {
-        result = operand1 - operand2;
+        return operand1 - operand2;
     } else if (operator == '*') {
-        result = operand1 * operand2;
+        return operand1 * operand2;
     } else if (operator == '/') {
         if (operand2 === 0) {
-            result = "Error: Division by zero";
+            return "Error: Division by zero";
         }
-        result = operand1 / operand2;
+        return operand1 / operand2;
     } else {
-        result = "Error: Invalid operator";
+        return "Error: Invalid operator";
     }
-    document.getElementById('result').textContent = result
+    // document.getElementById('result').textContent = result
 }
 
 function calculate() {
-    let result  = 'test';
+    let operator = '+';
+    let operand1 = document.getElementById('firstOperand').value;
+    console.log('1st op is ' + operand1);
+    let operand2 = document.getElementById('secondOperand').value;
+    let result  = operate(operator, Number(operand1), Number(operand2));
     document.getElementById('result').textContent = result;
 
 }
