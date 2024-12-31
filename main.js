@@ -1,3 +1,15 @@
+function numberToScreen(id) {
+    let number = Number(document.getElementById(id).innerHTML);
+    let resultField = document.getElementById('result');
+    resultField.textContent = number; 
+}
+
+button1 = document.getElementById('num1');
+button1.addEventListener('click', () => {
+    console.log(button1.innerHTML)
+    numberToScreen(button1.id);
+});
+
 function operate(operator, operand1, operand2) {
     if (operator == '+') {
         return operand1 + operand2;
@@ -33,7 +45,7 @@ function calculate() {
     document.getElementById('result').textContent = result;
 }
 
-document.querySelector('form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    calculate();
-});
+// document.querySelector('form').addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     calculate();
+// });
