@@ -27,11 +27,8 @@ body {
 }
 
 #number-pad {
-    /* display: flex;
-    justify-content: space-evenly; */
     width: 300px;
     margin: 0 auto;
-    /* text-align: center; */
 }
 
 .row {
