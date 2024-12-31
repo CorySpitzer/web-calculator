@@ -4,16 +4,19 @@ function numberToScreen(id) {
     resultField.textContent = number; 
 }
 
-ids = ['num0', 'num1', 'num2', 'num3', 'num4', 'num5', 'num6', 'num7', 'num8', 'num9'];
-// let button1 = 'x';
-ids.forEach((id) => {
-    console.log("id: " + id);
-    let button1 = document.getElementById(id);
-    button1.addEventListener('click', () => {
-        console.log(button1.innerHTML)
-        numberToScreen(button1.id);
-    });  
-});
+function addEventListenersToDigits() {
+    ids = ['num0', 'num1', 'num2', 'num3', 'num4', 'num5', 'num6', 'num7', 'num8', 'num9'];
+    ids.forEach((id) => {
+        console.log("id: " + id);
+        let button = document.getElementById(id);
+        button.addEventListener('click', () => {
+            console.log(button.innerHTML)
+            numberToScreen(button.id);
+        });  
+    });
+}
+
+addEventListenersToDigits();
 
 function operate(operator, operand1, operand2) {
     if (operator == '+') {
