@@ -50,27 +50,38 @@
             <button id="submit-btn" type="submit">Calculate</button>
         </form> -->
         <div id="number-pad">
-            <div class="row1">
+            <div class="row" id="row1">
                 <button class="number">1</button>
                 <button class="number">2</button>
                 <button class="number">3</button>
               </div>
               <br>
-              <div class="row2">
+              <div class="row" id="row2">
                 <button class="number">4</button>
                 <button class="number">5</button>
                 <button class="number">6</button>
               </div>
               <br>
-              <div class="row3">
+              <div class="row" id="row3">
                 <button class="number">7</button>
                 <button class="number">8</button>
                 <button class="number">9</button>
+              </div>
+              <br>
+              <div class="operations">
+                <button class="operator">+</button>
+                <button class="operator">-</button>
+                <button class="operator">*</button>
+                <button class="operator">/</button>
               </div>              
         </div>
         <div>
             <h2 id="result">No result yet!</h2>
         </div>
+
+        <span><button id="calc-btn">Calculate</button>
+        <span>   </span>
+        <button id="clear-btn">Clear</button></span>
 
     </div>
     <script src="main.js"></script>

@@ -25,11 +25,38 @@ body {
     opacity: 0.65;
     border-radius: 4px;
 }
-.operators {
-    width: 80px;
+
+#number-pad {
+    /* display: flex;
+    justify-content: space-evenly; */
+    width: 300px;
+    margin: 0 auto;
+    /* text-align: center; */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-evenly; */
+    /* width: 200px; */
+    gap: 10px;
+}
+
+.number {
+    width: 40px;
     height: 30px;
+}
+
+.operator {
+    width: 70px;
+    height: 25px;
     margin: 7px;
     font-size: large;
+}
+
+.operations {
+    display: flex;
+    justify-content: center;
 }
 
 #equation-box {
