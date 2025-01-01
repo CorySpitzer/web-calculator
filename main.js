@@ -24,8 +24,19 @@ function addEventListenersToCalc() {
     });  
 }
 
+function addEventListenersToClear() {
+    let button = document.getElementById('clear-btn');
+    button.addEventListener('click', () => {
+        textField = document.getElementById('result');
+        textField.innerHTML = '';
+    });  
+}
+
+
+
 addEventListenersToDigits();
 addEventListenersToCalc();
+addEventListenersToClear();
 
 function operate(operator, operand1, operand2) {
     if (operator == '+') {
