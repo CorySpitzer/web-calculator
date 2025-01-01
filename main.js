@@ -49,10 +49,22 @@ function calculate() {
     textField = document.getElementById('result');
     let text = textField.innerHTML;
     let operand1 = Number(text[0]);
-    // console.log('operand1 is ' + operand1 + ' and type is ' + typeof operand1);
     let operand2 = Number(text[2]);
     let operator = text[1];
-    let result = operate(operator, operand1, operand2);
+    let resut = 0;
+    if (text.length == 3) {
+        result = operate(operator, operand1, operand2);
+        console.log('result: ' + result + ' type: ' + typeof result);
+        // console.log('operand1 is ' + operand1 + ' and type is ' + typeof operand1);
+    } else if (text.length = 5) { //two operations
+        let newOperand1 = operate(operator, operand1, operand2);
+        let nextOperator = text[3];
+        let operand3 = Number(text[4]);
+        result = operate(nextOperator, newOperand1, operand3);
+        console.log('result: ' + result + ' type: ' + typeof result);
+    }
+    console.log('result: ' + result + ' type: ' + typeof result);
+    
     textField.textContent = result;
     return result; 
     // let operand1 = document.getElementById('firstOperand').value;
