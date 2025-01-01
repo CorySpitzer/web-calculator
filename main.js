@@ -16,7 +16,16 @@ function addEventListenersToDigits() {
     });
 }
 
+function addEventListenersToCalc() {
+    let button = document.getElementById('calc-btn');
+    button.addEventListener('click', () => {
+        // console.log(button.innerHTML)
+        calculate();
+    });  
+}
+
 addEventListenersToDigits();
+addEventListenersToCalc();
 
 function operate(operator, operand1, operand2) {
     if (operator == '+') {
@@ -36,24 +45,19 @@ function operate(operator, operand1, operand2) {
 }
 
 function calculate() {
-    let operator = 'no operator';
-    if (document.getElementById('plus').checked) {
-        operator = '+';
-    } else if (document.getElementById('minus').checked) {
-        operator = '-';
-    } else if (document.getElementById('multiply').checked) {
-        operator = '*';
-    } else if (document.getElementById('divide').checked) {
-        operator = '/';
-    }   
-    console.log('operator is ' + operator);
-    let operand1 = document.getElementById('firstOperand').value;
-    let operand2 = document.getElementById('secondOperand').value;
-    let result  = operate(operator, Number(operand1), Number(operand2));
-    document.getElementById('result').textContent = result;
+    // console.log('calculate called')
+    textField = document.getElementById('result');
+    let text = textField.innerHTML;
+    let operand1 = Number(text[0]);
+    // console.log('operand1 is ' + operand1 + ' and type is ' + typeof operand1);
+    let operand2 = Number(text[2]);
+    let operator = text[1];
+    let result = operate(operator, operand1, operand2);
+    textField.textContent = result;
+    return result; 
+    // let operand1 = document.getElementById('firstOperand').value;
+    // let operand2 = document.getElementById('secondOperand').value;
+    // let result  = operate(operator, Number(operand1), Number(operand2));
+    // document.getElementById('result').textContent = result;
 }
 
-// document.querySelector('form').addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     calculate();
-// });
