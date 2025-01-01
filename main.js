@@ -1,7 +1,7 @@
 function symbolToScreen(id) {
     let symbol = document.getElementById(id).innerHTML;
     let resultField = document.getElementById('result');
-    resultField.textContent = symbol; 
+    resultField.textContent += symbol; 
 }
 
 function addEventListenersToDigits() {
