@@ -29,6 +29,8 @@ function addEventListenersToClear() {
     button.addEventListener('click', () => {
         textField = document.getElementById('result');
         textField.innerHTML = '';
+        warningBox = document.getElementById('warning-box');
+        warningBox.innerHTML = '';
     });  
 }
 
@@ -59,28 +61,28 @@ function calculate() {
     // console.log('calculate called')
     textField = document.getElementById('result');
     let text = textField.innerHTML;
-    let operand1 = Number(text[0]);
-    let operand2 = Number(text[2]);
-    let operator = text[1];
+    let operand1 = Number(text.match(/\d+/g)[0]);
+    let operand2 = Number(text.match(/\d+/g)[1]);
+    let operator = text.match(/\D+/g)[0];
+    let numberOfOPerators = text.match(/\D+/g).length
     let resut = 0;
-    if (text.length == 3) {
+    if (numberOfOPerators == 1) {
         result = operate(operator, operand1, operand2);
         console.log('result: ' + result + ' type: ' + typeof result);
         // console.log('operand1 is ' + operand1 + ' and type is ' + typeof operand1);
-    } else if (text.length = 5) { //two operations
-        let newOperand1 = operate(operator, operand1, operand2);
-        let nextOperator = text[3];
-        let operand3 = Number(text[4]);
-        result = operate(nextOperator, newOperand1, operand3);
-        console.log('result: ' + result + ' type: ' + typeof result);
+    } else {
+        document.getElementById('warning-box').textContent = 'Use only one operator at a time'
     }
+    // } else if (text.length = 5) { //two operations
+    //     // let newOperand1 = operate(operator, operand1, operand2);
+    //     // let nextOperator = text[3];
+    //     // let operand3 = Number(text[4]);
+    //     // result = operate(nextOperator, newOperand1, operand3);
+    //     // console.log('result: ' + result + ' type: ' + typeof result);
+    // }
     console.log('result: ' + result + ' type: ' + typeof result);
     
     textField.textContent = result;
     return result; 
-    // let operand1 = document.getElementById('firstOperand').value;
-    // let operand2 = document.getElementById('secondOperand').value;
-    // let result  = operate(operator, Number(operand1), Number(operand2));
-    // document.getElementById('result').textContent = result;
 }
 
