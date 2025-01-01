@@ -1,17 +1,17 @@
-function numberToScreen(id) {
-    let number = Number(document.getElementById(id).innerHTML);
+function symbolToScreen(id) {
+    let symbol = document.getElementById(id).innerHTML;
     let resultField = document.getElementById('result');
-    resultField.textContent = number; 
+    resultField.textContent = symbol; 
 }
 
 function addEventListenersToDigits() {
-    ids = ['num0', 'num1', 'num2', 'num3', 'num4', 'num5', 'num6', 'num7', 'num8', 'num9'];
+    ids = ['num0', 'num1', 'num2', 'num3', 'num4', 'num5', 'num6', 'num7', 'num8', 'num9', 'add', 'subtract', 'multiply', 'divide'];
     ids.forEach((id) => {
-        console.log("id: " + id);
+        // console.log("id: " + id);
         let button = document.getElementById(id);
         button.addEventListener('click', () => {
-            console.log(button.innerHTML)
-            numberToScreen(button.id);
+            // console.log(button.innerHTML)
+            symbolToScreen(button.id);
         });  
     });
 }
